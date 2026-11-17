@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <section className="flex min-h-screen flex-col-reverse md:flex-col">
+      <section className="flex min-h-screen flex-col md:flex-col p-2">
         <Menu onSelect={handleMenuClick} />
         <RevenueCard
           total={totalRevenue}

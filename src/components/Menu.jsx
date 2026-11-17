@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import pociImg from "../assets/poci.webp";
-import greenteaImg from "../assets/greentea.webp";
+import pociImg from "../assets/poci.jpg";
+import greenteaImg from "../assets/greentea.jpg";
 import kukubimaImg from "../assets/kukubima.jpg";
 import susuImg from "../assets/susu.jpg";
 import tehtarikImg from "../assets/tehtarik.jpg";
@@ -58,7 +58,7 @@ function Menu({ onSelect }) {
           <img
             src={item.src}
             alt={item.name}
-            className="cursor-pointer"
+            className="cursor-pointer rounded-lg shadow-md"
             onClick={() => handleClick(item)}
           />
 

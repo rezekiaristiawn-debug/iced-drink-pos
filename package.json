@@ -7,15 +7,20 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cap:sync": "npm run build && cap sync android",
+    "build:apk": "npm run cap:sync && powershell -NoProfile -Command \"$env:JAVA_HOME = Split-Path (Split-Path (Get-Command java).Source -Parent) -Parent; if (-not $env:ANDROID_HOME) { $env:ANDROID_HOME = Join-Path $env:LOCALAPPDATA 'Android\\Sdk' }; $env:ANDROID_SDK_ROOT = $env:ANDROID_HOME; Push-Location android; & .\\gradlew.bat assembleDebug --no-daemon; $ok = $LASTEXITCODE -eq 0; Pop-Location; if ($ok) { New-Item -ItemType Directory -Force -Path apk | Out-Null; Copy-Item android\\app\\build\\outputs\\apk\\debug\\app-debug.apk apk\\pos-iced-drink-debug.apk -Force }\""
   },
   "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2",
     "@tailwindcss/vite": "^4.3.5",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "tailwindcss": "^4.3.5"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.6.2",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",

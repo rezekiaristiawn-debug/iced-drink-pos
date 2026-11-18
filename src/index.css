@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant landscape (@media (orientation: landscape));
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;

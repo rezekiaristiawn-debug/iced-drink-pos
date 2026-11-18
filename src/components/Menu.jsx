@@ -8,6 +8,11 @@ import chocolatosImg from "../assets/chocolatos.jpg";
 import gooddayImg from "../assets/goodday.jpg";
 import vanillalateImg from "../assets/vanillalate.jpg";
 import coklatsilverquinImg from "../assets/coklatsilverquin.jpg";
+import coklathazelnutImg from "../assets/coklathazelnut.jpg";
+import mocacinomilkImg from "../assets/mocacinomilk.jpg";
+import milomilkImg from "../assets/milomilk.jpg";
+import chocolatemilkImg from "../assets/chocolatemilk.jpg";
+import matchamilkImg from "../assets/matchamilk.jpg";
 
 function Menu({ onSelect }) {
   const [clickCounts, setClickCounts] = useState({});
@@ -49,16 +54,21 @@ function Menu({ onSelect }) {
     { id: 7, name: "Good Day", price: 5000, src: gooddayImg },
     { id: 8, name: "Vanilla Late", price: 10000, src: vanillalateImg },
     { id: 9, name: "Coklat Silverquin", price: 10000, src: coklatsilverquinImg },
+    { id: 10, name: "Coklat Hazelnut", price: 10000, src: coklathazelnutImg },
+    { id: 11, name: "Mocacino Milk", price: 10000, src: mocacinomilkImg },
+    { id: 12, name: "Milo Milk", price: 10000, src: milomilkImg },
+    { id: 13, name: "Chocolate Milk", price: 10000, src: chocolatemilkImg },
+    { id: 14, name: "Matcha Milk", price: 10000, src: matchamilkImg },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-7 md:grid-rows-[repeat(2,minmax(0,1fr))] gap-4 pt-0 p-2 md:p-2">
+    <div className="grid grid-cols-2 md:grid-cols-7 md:grid-rows-[repeat(2,minmax(0,1fr))] landscape:grid-cols-7 landscape:grid-rows-[repeat(2,minmax(0,1fr))] gap-4 pt-0 p-2 md:p-2">
       {menuList.map((item) => (
         <div key={item.id} className="relative">
           <img
             src={item.src}
             alt={item.name}
-            className="cursor-pointer rounded-lg shadow-md"
+            className="cursor-pointer rounded-lg shadow-lg"
             onClick={() => handleClick(item)}
           />
 
